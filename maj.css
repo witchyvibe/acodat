@@ -149,87 +149,33 @@ span.italic {
     font-style: italic;
   }
   
-  #field_id-6, #field_id-13, #field_id7 {
+  #field_id4, #field_id3, #field_id5 {
     text-align: center;
   }
-  #field_id-6 field, #field_id-13 field {
+  #field_id4 field, #field_id3 field, #field_id5 field {
     display: flex;
     justify-content: center;
     gap: 10px;
   }
 
-#field_id-6 label,
-#field_id-13 label,
-#field_id7 label {
+#field_id4 label,
+#field_id3 label,
+#field_id5 label {
     display: none;
   }
-  #field_id-6 label span, #field_id-13 label span, #field_id7 field,
-  #field_id-6 field::after, #field_id-13 field::after {
+  #field_id4 label span, #field_id3 label span, #field_id5 field,
+  #field_id4 field::after, #field_id3 field::after {
     font-family: var(--font-2);
     font-style: italic;
   }
 
-#field_id-6 field::after { content: "messages" }
-#field_id-13 field::after { content: "gallions" }
+#field_id4 field::after { content: "messages" }
+#field_id3 field::after { content: "gallions" }
   
-  #field_id-6 .field_uneditable, #field_id-13 .field_uneditable {
+  #field_id4 .field_uneditable, #field_id3 .field_uneditable {
     font-weight: 600;
     color: var(--co-2);
 	  line-height: 170%;
-  }
-  
-  /* cwtw */
-  #field_id10 {
-    position: relative;
-  }
-  
-  #field_id10 label {
-    grid-row: 1 / span 2;
-  }
-  
-  #field_id10 label::after {
-    content: "afficher au survol";
-    display: block;
-    font-weight: 600;
-    color: var(--co-2);
-    font-size: var(--small-size);
-  }
-  
-  #field_id10:hover field {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  #field_id10 field {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    margin-left: auto;
-    display: block;
-    padding: 5px;
-    background: var(--neutralDarker);
-    border-radius: var(--radius);
-    width: 230px;
-    height: 86px;
-    overflow: auto;
-    opacity: 0;
-    visibility: hidden;
-    transition: .3s all;
-  }
-
-
-#field_id10 textarea {
-    width: 100%;
-    height: 46px;
-}
-
-#field_id3, #field_id4, #field_id36, #field_id37, #field_id5, #field_id2 {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: var(--inter-size);
   }
   
    #field_id3 label, #field_id4 label, #field_id36 label, #field_id5 label, #field_id2 label,
