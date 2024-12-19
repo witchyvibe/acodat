@@ -1,593 +1,2067 @@
-#wombat {
-    position: relative;
-    background: var(--neutralDarker);
+.post_avatar {
+    border-radius: 5px;
+}
+
+.block {
+    background: var(--neutral);
     border-radius: var(--radius);
+    padding: var(--spacing);
 }
 
-.flex.pr_sjts {
-    flex-direction: column;
-    gap: 0;
-    justify-content: space-between;
-}
-
-  .pr_entete {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 0 var(--spacing);
-    align-items: center; 
-  }
-  
-  .userInfos {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr);
-    padding: 5px;
-  }
-  
-  .userGame {
-    display: grid;
-    grid-template: 1fr repeat(2, 25px) / 1fr 225px 1fr;
-    gap: var(--spacing);
-    margin-bottom: var(--spacing);
-  }
-
-.pr_title {
-    margin: 0 auto !important;
-}
-
-.userDataChildren {
-    flex-direction: column;
-}
-
-/* profil & descriptions des champs en italic */
-.container:has(form#ucp) {
-    backdrop-filter: blur(20px);
-}
-
-span.italic {
-    font-style: italic;
-}
-
-/* affichage champs */
-#userData label,
-#userInventory label {
-    font-size: var(--little-size);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-#userData label::before,
-#userInventory label::before {
-    content: "\2727\00263E\00A0";
-    color: var(--co-1);
-}
-
-#userData textarea,
-#userInventory textarea {
-    width: 100%;
-}
-
-.profile_field label {
-    color: var(--co-2);
-    font-weight: 600;
-}
-  
-  #pr_icon label {display: none}
-  #pr_icon .field_uneditable img {
-    width: 200px;
-    height: 97px;
-    object-fit: cover;
-    border-radius: var(--radius);
-  }
-  
-  .pr_entete::after {
-    content: "";
-    display: block;
-    grid-column: 1 / span 2;
-    width: 100%;
-    height: 2px;
-    margin-top: 10px;
-    background: var(--co-gradient);
-    border-radius: 50%;
-  }
-  
-  #field_id2 {
-    grid-column: 1;
-    overflow: auto;
-    height: 360px;
-    border: 12px solid var(--white);
-  }
-
-#field_id2 textarea {
-    height: 313px;
-    width: 100%;
-}
-  
-  #field_id2 label,
-  #field_id40 label {
-    display: none;
-  }
-  
-  #userGame > *:not(.profile_data, #user_avatar),
-  #userInfos {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 0 12px;
-  }
-  
-  /* userInfos */
-  
-  #field_id1, #field_id-4, #field_id-6 {
-    display: grid;
-    grid-template: repeat(2, 1fr) / repeat(2, auto);
-    justify-content: center;
-    align-items: center;
-    gap: 0 var(--spacing);
-  }
-  
-  #field_id1::before, #field_id-4::before, #field_id-6::before {
-    content: '\e979';
-    grid-row: 1 / span 2;
-    font-family: var(--font-ic);
-    color: var(--co-1);
-  }
-  
-  #field_id1::before { content: '\e99c' }
-  #field_id-4::before { content: '\e9db' }
-  #field_id-6::before { content: '\ecfe' }
-  
-  #field_id1::after, #field_id-4::after, #field_id-6::after {
-    content: "";
-    grid-column: 1 / span 2;
-    width: 100%;
-    height: 1px;
-    margin: 5px 0;
-    background: var(--co-gradient);
-  }
-  
-  #field_id1 label, #field_id-4 label {
-    font-family: var(--font-2);
-    font-style: italic;
-  }
-  
-  #field_id4, #field_id3, #field_id5 {
-    text-align: center;
-  }
-  #field_id4 field, #field_id3 field, #field_id5 field {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-
-#field_id4 label,
-#field_id3 label,
-#field_id5 label {
-    display: none;
-  }
-  #field_id4 field, #field_id3 field, #field_id5 field {
-    font-family: var(--font-2);
-    font-style: italic;
-  }
-  
-.user_contacts #field_id:nth-of-type(2),
-#field_id37 label {
-    display: none;
-  }
-  
-  .user_contacts > * {
-    position: relative;
-  }
-
-.pr_links a, #wombat .tabs-onglets > a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background: var(--co-gradient);
-    font-size: var(--small-size);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: var(--radius);
-    padding: 2px 5px;
-    color: white;
-}
-  
-  #user_avatar {
-    width: 225px;
-    height: 360px;
-    border: 4px solid var(--white);
-    border-radius: var(--radius);
-  }
-
-#user_avatar img {
-    width: 220px;
-    height: 352px;
-    border-radius: var(--radius);
-}
-  
-  .user_contacts {
-    justify-content: space-around;
-    align-items: center;
-    height: 30px;
-    background: var(--white);
-    border-radius: var(--radius);
-  }
-
-  #userRelEvol,
-  #userContent {
-    min-width: 285px;
-    width: 100%;
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 12px;
-  }
-
-#userRelEvol textarea { height: 360px; max-width: 100%; }
-
-#userRelEvol label, #userMultis label {
-    display: none;
-}
-
-#userRelEvol,
-#userContent {margin-top: var(--spacing);}
-
-.block:has(.userBujo) {background: transparent} 
-.userBujo label {display: none} 
-.userBujo textarea {width: 100%; min-height: 500px;}
-
-#userMultis textarea { width: 100%; min-height: 300px; } 
-.multis_grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(201px, .3fr)); justify-content: center; gap: var(--spacing);} 
-.multis_grid td { display: block; padding: 0; } 
-.multi { display: block; border-radius: var(--radius); overflow: hidden; background: var(--white); } 
-.multi tbody { display: flex; flex-direction: column; } 
-.multi td { display: block; } 
-.multi_img {position: relative; height: 110px} 
-.multi_img img { width: 100%; height: 110px; object-fit: cover; mask: linear-gradient(to bottom, var(--co-1) 60%, transparent 100%); } 
-.multi_infos { display: block; padding: 5px 10px 10px; font-size: var(--little-size); }
-
-button.more {
-    position: absolute;
-    left: -25px;
-    top: 0;
-    bottom: 0;
-    box-shadow: 0 0 10px var(--neutral);
-}
-
-.wombat-aside.open button.more {
-    left: auto;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    right: -25px;
-    z-index: 1;
-}
-
-/* BADGES DANS LE PROFIL */
-/*Badges*/
-
-.titre_choco {
+.pr_title, h1, h1.page-title, .panel:has(.fld_connexion) .h3::after, .panel:has(a[href="/register"]) .h3::after {
+    width: fit-content;
+    margin: 10px auto;
     font-size: var(--xl-size);
     font-weight: 400;
     text-transform: uppercase;
+    text-align: center;
     font-family: var(--special-font);
     line-height: 100%;
-    grid-column: 1 / -1;
-    color: var(--co-2);
-    border-bottom: 1px solid;
 }
 
-  .collec {
+.forum-page_title {
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+    padding: var(--spacing);
+    background: var(--neutralDark);
+    margin-bottom: var(--spacing);
+    border-radius: var(--radius);
+}
+
+.flex {
+    display: flex;
+    gap: 20px;
+}
+
+#users_here {
+    font-size: var(--little-size);
+}
+
+.profil_contact {
+    width: 200px;
+    padding: 5px 0 3px;
+    background: var(--neutralDark);
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.post_rank {
+    display: block;
+    width: 200px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 9px;
+    background: var(--white);
+    padding: 5px;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+#cp-main#cp-main#cp-main, table, .quickreply div#textarea_content {
+                width: 100% !important;
+            }
+
+/* S'applique à TOUS les éléments du forum*/
+
+.header_ctnr {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    display: grid;
+    position: sticky;
+    justify-items: center;
+    align-items: center;
+    padding-top: 38px;
+    width: 100%;
+    background: var(--header) fixed center center / cover no-repeat;
+}
+
+.header_ctnr > div {
+    display: flex
+;
+    align-items: center;
+    justify-items: space-between;
+}
+
+.header_ctnr > div, .header_ctnr > div {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.header_ctnr > .header_dark::before, .header_ctnr > .header_light::before {
+    transform: translateY(-20%);
+    opacity: 0;
+    animation: fromtop 1.5s ease forwards;
+}
+.header_ctnr > .header_dark::before, .header_ctnr > .header_dark::after, .header_ctnr > .header_light::before, .header_ctnr > .header_light::after {
+    content: "";
+    flex-shrink: 0;
+    display: block;
+    width: 150px;
+    height: 48vh;
+    background: var(--header-deco) center no-repeat;
+    background-size: auto 100%;
+    opacity: 0;
+    animation: apparate 3s forwards;
+}
+
+#header {
+    display: block;
+    margin: 0 auto;
+    width: 55%;
+    min-width: 660px;
+    border-bottom: none !important;
+    opacity: 0;
+    animation: apparate 1.5s forwards;
+}
+
+.header_title {
+    width: 54%;
+    clip-path: circle(0% at 50% 50%);
+    animation: comein 4s 1s forwards;
+}
+
+.global_fo > * {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.global_fo {
+    position: relative;
+    display: grid;
+    border-top: 1px solid var(--co-1);
+}
+
+.global_bg {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg2) center center / cover no-repeat;
+}
+
+.global_bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--bg-gradient), var(--bg2);
+    opacity: .8;
+}
+
+.header_container::before {
+    content: "";
+    display: grid;
+    grid-row: 1;
+    grid-column: 1;
+    position: sticky;
+    justify-items: center;
+    align-items: center;
+    padding-top: 38px;
+    background: var(--bg-header) fixed center center / cover no-repeat;
+    width: 100%;
+    height: 100vh;
+    -webkit-mask: linear-gradient(to bottom, var(--co-1), var(--co-1), transparent);
+}
+
+
+* {
+  box-sizing: border-box; /*évite que les éléments soient agrandis par le padding*/
+  /* SCROLLBAR CUSTOM POUR MOZILLA */
+  scrollbar-color: var(--contrastLight);
+  scrollbar-width: thin;
+}
+
+/*** ------------------------------- ***/
+/*** TOUTES LES PAGES --------------- ***/
+
+/* FOND DU FORUM ---*/
+body {
+  font-family: var(--font);
+  font-size: var(--normal-size);
+  color: var(--textColor);
+  margin: 0 !important;
+}
+
+/* SCROLLBAR --- */
+/* Scrollbar entière */
+::-webkit-scrollbar {
+}
+
+/* Rail */
+::-webkit-scrollbar-track {
+}
+
+/* Poignée */
+::-webkit-scrollbar-thumb {
+}
+
+/* STRUCTURE PRINCIPALE ---*/
+.main_forum {
+    position: relative;
+    z-index: 1;
+    min-width: 980px;
+    width: 70vw;
+    margin: 0 auto;
+    padding-top: calc(2* var(--spacing));
+    border-radius: var(--radius);
+}
+
+/* BANNIERE ---*/
+/* Mettre la bannière en fond permet de la changer selon le thème clair ou sombre */
+#header {
+  background-image: var(--header);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  width: 900px;
+  height: 330px;
+  display: block;
+}
+
+/* Conteneur de toutes les sous-sections
+ * comme les encadrés d'options, de rappel, etc... */
+.panel {
+background: var(--neutral);
+    border-radius: 5px;
+    padding: var(--spacing);
+}
+
+.sidebar {
+  position: fixed;
+  background-color: var(--neutral);
+  inset: 0;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 10px;
+  z-index: 999;
+}
+
+/* Conteneur de switcheroo */
+.sidebar_top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+/* Conteneur de l'ascenseur
+ * Sert essentiellement à définir où le placer dans la page */
+.sidebar_bottom {
+  width: 45px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Lien de renvoi haut/bas */
+.sidebar_bottom > a {
+  padding: 5px 8px;
+  background: var(--neutralDark);
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* BOUTON CHANGEMENT DE THEME ---*/
+@media (prefers-color-scheme: dark) {
+  .color-scheme-toggle .dark {
+    display: none;
+  }
+}
+@media (prefers-color-scheme: light) {
+  .color-scheme-toggle .light {
+    display: none;
+  }
+}
+.color-scheme-toggle,
+[data-color-scheme="light"] .color-scheme-toggle .dark,
+[data-color-scheme="dark"] .color-scheme-toggle .light {
+  display: block;
+  width: 100%;
+}
+
+[data-color-scheme="dark"] .color-scheme-toggle .dark,
+[data-color-scheme="light"] .color-scheme-toggle .light {
+  display: none;
+}
+
+.color-scheme-toggle {
+  background-color: var(--neutralDark);
+  padding: 5px 8px;
+  font-size: 36px;
+  text-align: center;
+  border-radius: 5px;
+  color: var(--textColor);
+}
+
+.color-scheme-toggle:hover {
+  color: var(--accentClr);
+}
+
+/****** ------------------------------------------------------------------------------
+ ****** GÉNÉRALITÉS ------------------------------------------------------------------ 
+ ****** Sélecteurs généraux s'appliquant à plusieurs reprises sur tout le forum ******/
+
+/*** ----------------------------------- ***/
+/*** LIENS ET TEXTE -------------------- ***/
+
+/* LIENS DU FORUM --- */
+a {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--textColorAccent);
+}
+
+/*liens au survol*/
+a:hover {
+  color: var(--accentClr);
+}
+
+/* Emoji mis par défaut de FA
+ * Les réduire les rend moins horribles à voir */
+.emojione {
+  width: 19px !important;
+}
+
+/* TITRES DES PAGES --- ***/
+
+/* Utilisé pour des titres de pages */
+h1,
+h1.page-title {
+  color: var(--contrastLight);
+  margin: 10px 0 20px;
+  font-size: var(--title-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Utilisé pour des titres de sujets, blogs... */
+h2,
+.h2 {
+  margin: 0;
+  font-size: var(--large-size);
+  font-weight: 700;
+}
+
+/* Utilisé pour des titres de sous-sections, petit encadré, ...*/
+h3,
+.h3 {
+  color: var(--contrastLight);
+  padding-bottom: 10px;
+  margin: 0;
+  font-size: var(--medium-size);
+  font-weight: bold;
+}
+
+/*** --------------------------------------- ***/
+/*** BOUTONS D'INTERACTION ET BARRE DE TEXTE ***/
+
+/* CHAMPS DE TEXTE ---*/
+input:is([type="text"],[type="password"], .inputbox), textarea {
+  border: none;
+  border-radius: 5px;
+  background: var(--neutralDark);
+  font-size: var(--normal-size);
+  color: var(--contrastLight)!important;
+  padding: 8px 10px;
+}
+
+/* Au focus */
+:focus:is(input:is([type="text"],[type="password"], .inputbox), textarea) {
+    outline: none;
+    border: 1px solid var(--accentClr);
+}
+
+/* BOUTONS D'INTERACTION --- *
+ * Envoyer, prévisualiser, sauvegarder, aller,... */
+input:is([type="submit"], [type="button"], [type="hidden"], [type="reset"]),
+.button {
+  font-size: var(--normal-size);
+  padding: 10px 15px !important;
+  border-radius: 5px;
+  background: var(--neutralDarker);
+  color: var(--contrastLight);
+  font-weight: 600;
+  border: none;
+}
+
+/* Au survol */
+:hover:is(input:is([type="submit"], [type="button"], [type="hidden"], [type="reset"]), .button){
+  color: var(--accentClr);
+}
+
+/* Boutons désactivés */
+:disabled:is(input:is([type="submit"], [type="button"], [type="hidden"], [type="reset"]), .button) {
+    opacity: .5;
+    filter: saturate(1);
+    cursor: not-allowed;
+}
+
+:disabled:hover:is(input:is([type="submit"], [type="button"], [type="hidden"], [type="reset"]), .button) {
+    color: inherit;
+}
+
+.submit-buttons {
+  text-align: center;
+}
+
+.quickmod {
+  margin-bottom: 20px;
+}
+
+/* MENUS DEROULANTS --- */
+select {
+  background: transparent;
+  border: var(--border);
+  border-radius: 5px;
+  font-size: var(--normal-size);
+  padding: 8px 10px;
+  color: var(--textColor);
+}
+
+select:focus-visible { outline: 1px solid var(--accentClr);}
+
+
+
+/*** ------------------------------- ***/
+/*** PAGINATIONS -------------------- ***/
+
+.pagination {
+}
+
+/*lien unique vers les pages numérotées*/
+.pagination span a {
+  font-size: var(--little-size);
+}
+
+/*survol des liens uniques des pages*/
+.pagination span a:hover {
+  font-weight: 600;
+}
+
+/*lien actif : page sur laquelle vous vous trouvez */
+.pagination span strong {
+  background-color: var(--neutralDark);
+  border-radius: 3px;
+  padding: 1px 4px;
+}
+
+/*suppression de l'image-lien "aller à la page suivante" */
+.page-topic span a:last-child,
+.pag-img {
+  display: none;
+}
+
+/*** ------------------------------- ***/
+/*** ELEMENTS ESTHETIQUES ---------- ***/
+
+/* Contenur général qui sert généralement de fond et/ou de contour*/
+.container {
+    background: var(--neutralDark);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Barre de séparation */
+.separator {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--neutralDark);
+  clear: both;
+  height: 1px;
+  width: 100%;
+}
+
+hr {
+  border: none;
+  border-top: var(--border);
+}
+
+/* Titre d'un toggle */
+summary {
+  cursor: pointer;
+}
+
+/* Conteneur moins large (les historiques des messages essentiellement) */
+.wrapped {
+  width: 80%;
+  margin: 10px auto;
+  clear: both;
+}
+
+/* Image/avatar réduit */
+.mini_img img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+  margin-right: 10px;
+  background: var(--neutralDark);
+}
+
+/* Permet d'aligner un élément à droite ou à gauche */
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+.clear {
+  clear: both;
+}
+
+/* Barre de gestion 
+ * Contient des boutons ou des liens spéciaux */
+.links_bar {
+    border-radius: 5px;
+    margin: 25px 0;
+    clear: both;
+    font-size: var(--little-size);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+}
+
+/* supprime si vide */
+.links_bar:empty {
+  display: none;
+}
+
+/* Lien spécial mis en avant */
+.specials_links a, a.specials_links {
+    background: var(--co-gradient);
+    color: var(--contrast);
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+  margin: 5px;
+}
+
+/* Suppression des liens vides */
+.specials_links a:empty,
+a.specials_links:empty {
+  display: none;
+}
+
+/****** ------------------------------------------------------------------------------ 
+ ****** ENTETE DU FORUM --------------------------------------------------------------
+ ****** Tous les éléments qui s'affichent en tête de toutes les pages ---------------- ******/
+
+/*** ------------------------------- ***/
+/*** TOOLBAR ----------------------- ***/
+
+/* Toute la toolbar */
+#fa_toolbar {
+  font-size: var(--little-size);
+  font-family: var(--font);
+}
+
+/* Supression de la barre de recherche, des boutons sociaux et des flèches */
+#fa_search,
+#fa_share,
+#fa_hide {
+  display: none;
+}
+
+/* Logo Forumactif : 
+ * ATTENTION, il est techniquement interdit de supprimer de logo de FA. 
+ * Techniquement. Faites-en donc ce que vous voulez. */
+#fa_left {
+  display: none;
+}
+
+/* Conteneur du lien de bienvenue et notification */
+#fa_right {
+  position: relative;
+  margin-top: -2px;
+  margin-right: 5px;
+  border-radius: 5px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+/* LIENS DE LA TOOLBAR ---*/
+
+/* Tous les liens : connexion, s'enregistrer, bienvenue (pseudo), notification*/
+#fa_welcome,
+#fa_notifications,
+#fa_right a.rightHeaderLink[href*="/login"],
+#fa_right a.rightHeaderLink[href*="/register"] {
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+/* Lien "Connexion" */
+#fa_right a.rightHeaderLink[href*="/login"] {
+}
+
+/* Lien "S'enregistrer" */
+#fa_right a.rightHeaderLink[href*="/register"] {
+}
+
+/* Lien "Bienvenue (pseudo)" */
+#fa_welcome {
+}
+
+/* Lien "notification"*/
+#fa_notifications {
+}
+
+/* liens "bienvenue" et "notification" [AU CLIC] */
+#fa_right.welcome #fa_menu #fa_welcome,
+#fa_toolbar > #fa_right.notification > #fa_notifications {
+  background: var(--neutralDark);
+  border-radius: 5px;
+}
+
+/* MENU bienvenue [ET] liste des notifications */
+ul#fa_menulist,
+ul#notif_list {
+  border: var(--border);
+  background: var(--neutral);
+  border-radius: 5px;
+  right: 0;
+  left: initial !important;
+  top: 45px;
+  z-index: 999;
+  position: absolute;
+  display: none;
+}
+
+/* MENU BIENVENUE ---*/
+/* conteneur */
+#fa_menulist {
+  width: 350px;
+}
+
+/* Colonne gauche du menu de bienvenue avec avatar */
+#fa_usermenu {
+  float: left;
+  padding: 15px;
+  text-align: center;
+  min-height: 250px;
+}
+
+/* Image de l'avatar dans le menu de bienvenue */
+#fa_usermenu img {
+  object-fit: cover;
+  object-position: center;
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Liens du menu de bienvenue */
+#fa_menulist li {
+  margin: 10px 0;
+}
+
+/* Séparateur du menu de bienvenue */
+#fa_toolbar #fa_right .fa_separator {
+  margin: 5px 0 5px 150px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* LISTE DES NOTIFICATIONS ---*/
+/* conteneur*/
+#notif_list {
+  width: 380px;
+  padding: 5px;
+  flex-direction: column-reverse;
+}
+
+/* Ligne d'une notification */
+#notif_list li {
+  position: relative;
+  padding: 5px;
+  padding-right: 20px;
+  border-top: 1px solid var(--neutralDark);
+}
+
+#notif_list li:nth-last-child(2) {
+  border-top: none;
+}
+
+/* Notifications non lues */
+#notif_list .unread {
+  background: var(--neutralDark);
+  font-weight: bold;
+}
+
+/* Bouton suppresion d'une notification */
+#fa_toolbar #fa_right #notif_list li a.delete {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+}
+
+/* Croix du bouton suppression */
+#fa_toolbar #fa_right #notif_list li a.delete:before {
+  content: "\f12a";
+  display: inline-block;
+  font-family: "Ionicons";
+  font-style: normal;
+  font-weight: normal;
+  color: #ff4f42;
+}
+
+/* Lien "voir toutes les notifications" */
+#notif_list .see_all {
+  background: var(--neutralDark);
+  border-radius: 5px;
+  margin-top: 5px;
+  text-align: center;
+  order: -1;
+}
+
+/* POPUP NOTIFICATION ---*/
+
+/* Placement du pop-up de nouvelle notification */
+#fa_toolbar #live_notif {
+  position: absolute;
+  top: 45px;
+  right: 0px !important;
+}
+
+/* Stylisation du pop-up */
+#fa_toolbar #live_notif .fa_notification {
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+}
+
+/* AVATAR TOOLBAR ---*/
+/* Conteneur de l'avatar toolbar */
+.fa_avatar {
+  position: absolute;
+  top: -1px;
+  left: -45px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+}
+
+/* Image de l'avatar */
+.fa_avatar img {
+  object-fit: cover;
+  object-position: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+/*** ------------------------------- ***/
+/*** SWITCHEROO - Par Monomer ------ ***/
+/*** Gestionnaire de multicompte --- ***/
+
+:root {
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.43, 0.09, 0.38, 2.56);
+}
+
+/* BARRE SWITCHEROO --- */
+/* BARRE --- */
+.switcheroo {
+  color: var(--textColor);
+}
+
+/* Positionnement des ronds */
+.switcheroo__squircles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 15px;
+}
+
+/* AFFICHAGE DES COMPTES ---*/
+
+/* Rond */
+.switcheroo__squircle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  background-color: var(--neutralDark);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: 5px solid transparent;
+  transition: border-radius 128ms var(--ease);
+}
+
+/* Rond au survol */
+.switcheroo__squircle:hover {
+  outline-color: var(--neutralDarker);
+  border-radius: 8px;
+}
+
+.switcheroo__squircle:hover img {
+  border-radius: 8px;
+}
+
+/* Conteneur de l'avatar */
+.switcheroo__avatar {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+/* Image de l'avatar */
+.switcheroo__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  transition: border-radius 128ms var(--ease);
+  position: relative;
+}
+
+/* Avatar du compte connecté */
+.switcheroo__squircle.active,
+.switcheroo__squircle.active img {
+  outline-color: var(--neutralDark);
+  cursor: default;
+}
+
+/* AJOUTER UN COMPTE ---*/
+/* button : ajouter un compte */
+.switcheroo__squircle--button {
+  transition: border-radius 128ms var(--ease);
+  color: var(--contrastLight);
+}
+
+/* icon plus */
+.switcheroo__squircle--button i {
+  font-size: 19px;
+}
+
+.switcheroo__squircle--button:hover {
+  color: var(--accentClr);
+}
+
+/* Bouton de suppression */
+.switcheroo__delete {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: -7px;
+  right: -7px;
+  border-radius: 50%;
+  background-color: var(--accentClr);
+  transform: scale(0);
+  opacity: 1;
+  transition: transform 128ms var(--ease), opacity 64ms var(--ease);
+  cursor: pointer;
+  color: var(--neutral);
+  line-height: 0;
+}
+
+.switcheroo__squircle:hover .switcheroo__delete {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* TOOLTIP - INFOBULLE DU PSEUDO ---*/
+
+/* Conteneur du pseudo */
+.switcheroo__popper {
+  background-color: var(--neutralDarker);
+  padding: 0.3rem 1rem;
+  position: absolute;
+  width: -webkit-max-content;
+  width: max-content;
+  border-radius: 5px;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 64ms var(--ease), transform 128ms var(--ease-bounce);
+  pointer-events: none;
+  color: var(--textColor);
+  left: 155%;
+  top: 50%;
+  transform-origin: left;
+  transform: translateY(-50%) scale(0.98);
+}
+
+/* Flèche tooltip */
+.switcheroo__popper:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--neutralDarker);
+  z-index: -1;
+  left: -3px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  border-radius: 2px;
+}
+
+.switcheroo__squircle:hover .switcheroo__popper {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+/* LOGO --- retirez display:none pour retrouver le logo */
+.switcheroo__logo,
+.switcheroo__divider {
+  display: none;
+}
+
+/* MODAL : FENETRE DE CONNEXION --- */
+
+/* Fond de l'affichage de connexion */
+.monomer-overlay {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.2s opacity ease;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Boîte de connexion */
+.monomer-modal {
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  width: 94%;
+  padding: 30px;
+  transition: 0.2s opacity ease;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background: var(--neutral);
+  padding: 50px;
+  box-shadow: var(--shadowBox);
+}
+
+/* Champs à remplir */
+.switcheroo__form-row {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+/* Nom du champ */
+.switcheroo__form-label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Zone de texte */
+.switcheroo__form-input {
+  padding: 6px !important;
+  border-radius: 4px;
+  width: 100%;
+  background-color: var(--neutral);
+  color: var(--contrastLight);
+  cursor: text;
+}
+
+/* Bouton de connexion */
+.switcheroo__form-button {
+  border-radius: 8px;
+  padding: 4px 10px 5px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  align-self: center;
+  background-color: var(--accentClr);
+  cursor: pointer;
+  color: var(--neutral);
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.switcheroo__form-button:hover {
+  background: var(--contrastLight);
+}
+
+.monomer-modal.monomer-open,
+.monomer-overlay.monomer-open {
+  opacity: 1;
+}
+
+/* Fermer la boîte de connexion */
+.monomer-close {
+  font-size: 16px;
+  line-height: 12px;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  color: var(--textColor);
+  border: 0;
+  outline: none;
+  background: var(--contrastLighter);
+  border-radius: 4px;
+  padding: 0;
+  padding-left: 1px;
+}
+
+.monomer-close:hover {
+  background: var(--contrastLight);
+}
+
+/*** ------------------------------- ***/
+/*** BARRE DE NAVIGATION ----------- ***/
+
+/* Conteneur de la barre de nav */
+.navbar {
+    background: var(--neutralDarker);
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: var(--little-size);
+    letter-spacing: 1px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 998;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    width: 60%;
-    height: 60%;
-    margin: auto;
-    z-index: 2;
-    overflow: auto;
-    transition: .5s all;
-    background: var(--white);
+    transition: all 0.5s;
+}
+
+/* Suppression des liens peu utilisés*/
+.navbar a[href^="/faq"],/*faq*/
+.navbar a[href^="/calendar"],/*calendrier*/
+.navbar a[href^="/groups"],/*groupes*/
+.navbar a[href^="/images"]/*Dernières images*/ {
+  display: none;
+}
+
+/* liens de navigation */
+a.mainmenu {
+  padding: 5px;
+}
+
+/* Lien navigation au survol*/
+a.mainmenu:hover {
+  background: var(--neutral);
+  border-radius: 5px;
+}
+
+/* Image des liens */
+a.mainmenu img {
+  display: none;
+}
+
+/*** ------------------------------- ***/
+/*** ANNONCES DEFILANTES ----------- ***/
+
+/* Barre défilante */
+.module {
+  border-radius: 5px;
+  border: var(--border);
+  margin: 10px 0;
+  padding: 4px 8px;
+}
+
+/****** ------------------------------------------------------------------------------
+ ****** PAGE PRINCIPALE, INDEX ------------------------------------------------------- ******/
+
+/* PAGE D'ACCUEIL ---*/
+.introduction {
+}
+
+/*** ------------------------------- ***/
+/*** CATEGORIES -------------------- ***/
+
+.category {
+    border-radius: 10px;
+}
+
+/* Titre d'une catégorie */
+
+.cate_title {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    margin: 20px auto 30px;
+}
+
+.cate_title h2 {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    grid-row: 1;
+    grid-column: 1;
+    color: white;
+    font-size: var(--xl-size);
+    font-family: var(--special-font);
+    text-shadow: 0 0 5px white;
+    font-weight: 400;
+}
+
+/* conteneur d'un forum*/
+
+.forums {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.forum {
+    background: var(--neutral);
     padding: 20px;
     border-radius: var(--radius);
-}
-  
-  .collec.hidden { visibility: hidden; opacity: 0; }
-
-#badges-profil {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(60px,1fr));
-    gap: var(--spacing);
-}
-#badges-profil img {
-    width: 100%;
-}
-#badges-profil .badge, .js-badges-profil .badge {
-  filter: grayscale(100%);
-  -webkit-filter: grayscale(100%);
-}
-/*Badges obtenus*/
-.nope {filter: grayscale(100%) !important}
-.yes {filter: grayscale(0) !important}
-
-
-.post_infos > .user_field .field_content img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    position: absolute;
-    right: 14px;
-    top: 14px;
-    border: 1px solid var(--co-1);
-    padding: 2px;
-}
-
-
-  .ps_online {
-    display: flex;
-    align-items: flex-end;
-    gap: 5px;
-    margin-bottom: 5px;
-}
-  
-  .post_pseudo {
-    font-weight: 400;
-    font-family: var(--special-font);
-    font-size: var(--title-size);
-    text-transform: uppercase;
-}
-  
-  .post_rank {
-    z-index: 2;
-    display: block;
-    width: 200px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 9px;
-    background: var(--white);
-    padding: 5px;
-    border-radius: var(--radius);
-    text-align: center;
-}
-  
-  .post_rank b1 {font-size: 9px}
-  
-  .post_rank b1::before {content: none}
-  .post_rank b1::after {content: '\0027E1\000020' !important}
-  
-  .field-cw-tw {
     position: relative;
-    width: 45px;
-    font-size: var(--small-size);
-    transition: opactiy 0.5s;
-  }
-  
-  .field-cw-tw .field_content {
-    position: absolute;
-    width: 200px;
-    padding: 0px 5px;
-    background: var(--neutralDarker);
-    border-radius: var(--radius);
-    z-index: 1;
-    opacity: 0;
-    transition: .5s all;
-  }
-  
-  .field-cw-tw:hover .field_content { opacity: 1 }
-  
-  .field-cw-tw .field_label {
-    background: var(--white);
-    padding: 0 4px 1px;
-    border-radius: var(--radius);
-    letter-spacing: 0;
-    color: var(--contrast);
-    margin-right: 5px;
-  }
-  
-  .field-cw-tw .field_content {
-    position: absolute;
-    width: 200px;
-    padding: 0px 5px;
-    background: var(--neutralDarker);
-    border-radius: var(--radius);
-    z-index: 1;
-    opacity: 0;
-    transition: .5s all;
-  }
-  
-  .field_separator,
-  .field-avatar .field_label,
-  .field-credits .field_label,
-  .field-pronom .field_label,
-  .field-dialogues .field_label{
-    display: none;
-  }
-  
-  .field-rpgiste {
-    position: absolute;
-    left: 50px;
-    font-size: var(--inter-size);
-    line-height: var(--inter-size);
-  }
-
-.field-rpgiste .field_label {
-    display: none;
+    overflow: hidden;
 }
-  
-  .field-messages,
-  .field-gallions,
-  .field-dimension,
-  .field-avatar,
-  .field-credits,
-  .field-dialogues,
-  .field-pronom {
-    position: absolute;
-    top: 58%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-  
-  .field-messages .field_content {
-    text-align: center;
-    width: 80px;
-  }
-  
-  .field-messages .field_content, .field-gallions .field_content, .field-dimension .field_content {
-    font-size: var(--title-size);
-    font-family: var(--font-2);
-  }
-  
-  .field-gallions {
-    width: 115px;
-    left: 109px;
-    border-left: 1px solid var(--co-2);
-  }
-  
-  .field-dimension {
-    left: 224px;
-    width: 120px;
-    padding: 0 var(--spacing);
-    border-left: 1px solid var(--co-2);
-    border-right: 1px solid var(--co-2);
-  }
-  
-  .field-avatar,
-  .field-credits,
-  .field-pronom,
-  .field-dialogues {
-    left: 365px;
-    width: fit-content;
-    font-size: var(--little-size);
-  }
-  
-  .field-avatar {
-    top: 53%;
-  }
-  
-  .field-credits {
-    top: 69%;
-  }
-  
-  .field-dialogues {
-    top: 85%;
-  }
-  
-  .field-pronom {
-    top: 100%;
-  }
-  
-  .field-avatar .field_content::before {
-    content: "ft. “ ";
-  }
-  
-  .field-credits .field_content::before {
-    content: "par “ ";
-  }
-  
-  .field-dialogues .field_content::before {
-    content: "en “ ";
-  }
 
-.field-messages .field_label, .field-gallions .field_label, .field-dimension .field_label, .field-avatar .field_label, .field-credits .field_label, .field-dialogues .field_label, .field-pronom .field_label {
-    color: var(--co-2);
-    font-weight: 600;
+.forum:last-child {
+  margin-bottom: 0;
 }
-  
-  .field-avatar .field_content::before,
-  .field-credits .field_content::before,
-  .field-dialogues .field_content::before,
-  .field-pronom .field_content::before {
-    font-family: var(--font-2);
-    font-style: italic;
-    color: var(--contrast);
-    font-weight: 600;
-  }
 
-.field-surnom {
-    position: absolute;
-    right: 0px;
+/* titre d'un forum */
+a.forumtitle {
+width: fit-content;
+    font-size: var(--large-size);
+    font-family: var(--font-2);
     text-transform: uppercase;
-    font-size: 9px;
-    background-color: var(--co-1);
-    padding: 3px 5px;
-    border-radius: 5px;
-    top: -28px;
+    align-self: center;
+    background: var(--co-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px transparent;
+    position: relative;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    top: -33px;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.forum_content {
+    height: 100%;
+}
+
+/*image statut du forum */
+.forum-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0 0 30px;
+    width: 70px;
+    height: 70px;
+    background-color: var(--white);
+    grid-row: 1 / span 2;
+   margin: 0 -1px -68px auto;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    z-index: 1;
+}
+
+.fo_deco {
+    grid-row: 1 / span 4;
+    grid-column: 1;
+    margin: -20px 0 -20px -20px;
+    overflow: hidden;
+  display: grid;
+}
+
+.fo_deco img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.fo_deco::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 70%;
+    background: var(--base-2);
+    grid-row: 1;
+    grid-column: 1;
+}
+
+/*description du forum*/
+.forum_desc {
+display: grid;
+    grid-template-columns: 120px 1fr 180px;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 10px;
+    margin-bottom: 10px;
+    background: var(--neutral);
+    border-radius: var(--radius);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    overflow: hidden;
+}
+
+#c1 .desc {
+    margin-left: 20px;
+    grid-row: 1;
+    grid-column: 2;
+    height: 65px;
+    margin-top: 30px;
+  text-align: justify;
+}
+
+#f2 .desc {
+    margin-left: 20px;
+    grid-row: 1;
+    grid-column: 2;
+    height: 65px;
+    margin-top: 30px;
+  text-align: justify;
+}
+
+#f1 .desc {
+    margin-left: 20px;
+    grid-row: 1;
+    grid-column: 2;
+    height: 65px;
+    margin-top: 30px;
+  text-align: justify;
+}
+.desc {
+    overflow: hidden auto;
+    padding-right: 3px;
+}
+
+#c1 .fo_links {
+    grid-row: 4;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.fo_links a {
+    display: inline-block;
+    background: var(--co-2grad);
+    margin-right: 5px;
+    padding: 0 5px;
+    border-radius: var(--xs-radius);
+    font-size: var(--little-size);
     color: white;
+    text-transform: lowercase;
+    text-align: center;
+}
+
+/*conteneur avatar du dernier posteur*/
+.forum_avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.forum_avatar img {
+    background: var(--neutralDark);
+    width: 50px;
+    height: 85px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+/* dernier message*/
+.forum_lastpost {
+    width: 100%;
+    font-size: var(--little-size);
+}
+
+.forum_details {
+  border-top: 1px solid var(--neutralDark);
+  padding-top: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* liens des sous forums */
+#subforum {
+  font-size: 0; /*permet de retirer la virgule*/
+}
+
+#subforum a {
+    display: inline-block;
+    background: var(--co-2grad);
+    margin-right: 5px;
+    padding: 0 5px;
+    border-radius: var(--xs-radius);
+    font-size: var(--little-size);
+    color: white;
+    text-transform: lowercase;
+    text-align: center;
+}
+
+.forum_stats {
     font-weight: 600;
+    font-size: var(--little-size);
+    display: flex;
+    gap: 10px;
+    border-radius: var(--radius);
+}
+
+.forum_stats span {
+    background: var(--co-gradient);
+    padding: 5px 10px;
+    border-radius: var(--xs-radius);
+    text-align: center;
+    color: var(--contrast);
+}
+
+.forum_stats {
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: center;
+    align-self: center;
+    flex-direction: column;
+      margin-top: 28px;
+}
+
+.fo_stats {
+    grid-row: 1;
+    grid-column: 3;
+    margin-right: 20px;
+    display: flex;
+    gap: 10px;
+    width: fit-content;
+}
+
+/*** ------------------------------- ***/
+/*** QUI EST EN LIGNE -------------- ***/
+
+.qeel {
+  background: var(--neutralDark);
+  border-radius: 5px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-gap: 1px;
+  margin-bottom: 10px;
+}
+
+.qeel > div {
+  background: var(--neutral);
+  padding: 15px 10px;
+}
+
+.qeel-left {
+  border-radius: 5px 0 0 5px;
+}
+
+/* Dernier inscrit */
+#last_user {
+  display: flex;
+  align-items: center;
+}
+
+#lastuser_avatar img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/* groupes*/
+a.groups {
+  display: block;
+  background: var(--neutralDark);
+  border-radius: 5px;
+  text-align: center;
+  padding: 2px 0;
+  margin-bottom: 5px;
+  opacity: 1;
+}
+
+a.groups:hover {
+  opacity: 0.7;
+}
+
+a.groups:last-child {
+  margin-bottom: 0;
+}
+
+.qeel-middle {
+}
+
+/*X connectés :: 1 membre, 0 invisible, 0 invité*/
+#total_users {
+}
+
+/*Connectés en ce moment*/
+#online_users {
+  height: 95px;
+  overflow: auto;
+}
+
+/*ne pas supprimer*/
+#online_users br {
+  display: none;
+}
+
+.credits {
+  font-size: var(--little-size);
+  border: var(--border);
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.qeel-right {
+  border-radius: 0 5px 5px 0;
+  text-align: justify;
+}
+
+/****** ------------------------------------------------------------------------------
+ ****** LISTE DES SUJETS ------------------------------------------------------------- ******/
+
+/*** ------------------------------- ***/
+/*** ENTETE ET FOOTER DE LA LISTE DES SUJETS ***/
+
+/* Chaîne de navigation et pagination
+ * (réutilisé dans l'affichage d'un sujet (viewtopic_body)) */
+.navigation_links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    gap: 5px;
+}
+
+/* chaîne de lien de navigation : catégorie > forum > sous-fo */
+.navigation_chain {
+font-size: 0;
+    background: var(--neutralDarker);
+    border-radius: 5px;
+    width: 100%;
+    padding: 3px;
+    text-align: center;
+}
+
+.navigation_chain a {
+    font-size: var(--little-size);
+    letter-spacing: 1px;
+    margin-right: 8px;
+}
+
+.navigation_chain a:before {
+  content: "›";
+  /*symbole ou texte modifiable*/
+  font-size: var(--nomal-size);
+  margin-right: 3px;
+}
+
+/* BOUTONS DE MESSAGE : Répondre, Nouveau,... ---* 
+ * (réutilisé dans l'affichage d'un sujet (viewtopic_body) et les MP (privmsgs_body) */
+.buttons {
+  background: var(--co-gradient);
+  padding: 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+  opacity: 1;
+  color: #fff;
+}
+
+/* BOUTONS : modérer les sujets de ce forum */
+#moderation_forum_tools,
+#moderation_forum_tools strong {
+  font-size: 0px;
+}
+
+#moderation_forum_tools a {
+  background: var(--neutralDark);
+  border-radius: 5px;
+  padding: 2px 8px;
+  font-size: var(--normal-size);
+}
+
+/*** ------------------------------- ***/
+/*** LISTE DES SUJETS -------------- ***/
+
+/* Bloc de description du forum */
+.forum-page_desc {
+  margin: 0 0 20px;
+  background: var(--neutral);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Conteneur sujet dans la liste */
+.topicslist_row {
+position: relative;
+    background: var(--neutral);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 50px 1fr auto auto auto;
+    align-items: center;
+    margin-bottom: var(--spacing);
+}
+
+/* Image du sujet */
+.topicslist-img {
+    padding: 18px;
+}
+
+.topicslist_infos {
+min-height: 75px;
+    display: grid;
+}
+
+.topicslist_infos::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--co-gradient);
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.topic-labels {
+    position: absolute;
+    top: -14px;
+    left: 0;
+    right: auto;
+}
+
+.topic-type strong:not(:empty), .blog-type:not(:empty) {
+    display: inline-block;
+    margin-left: 15px;
+    padding: 0 5px !important;
+    width: 92px;
+    text-align: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+    background: var(--co-1);
+    border-radius: var(--xs-radius);
+    font-size: var(--small-size) !important;
     letter-spacing: 1px;
 }
 
-.field-surnom::before {
-    content: 'aka';
-    margin-right: 5px;
+/*titre du sujet*/
+.topictitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: bottom;
+    color: white;
+    font-family: var(--font-2);
 }
 
-.field-surnom .field_label {
-    display: none;
+.topicslist_infos > div {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    grid-row: 1;
+    grid-column: 1;
+    padding: 5px var(--spacing);
+    display: flex
+;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--neutralDark);
 }
-  
-  .post_userinfo {
-    max-height: 145px;
-    padding: 5px;
-    overflow: auto !important;
-  }
 
-.user_profile-wombat strong:not(.pr_title strong) {
-    color: var(--co-1);
+/* icône de type de message ( exemple : -18 ans, sujet résolu, ... ) */
+.topic_msgicon {
+  margin-right: 5px;
 }
 
-.user_profile-wombat i {
+.topic_msgicon:empty {
+  display: none;
+}
+
+.topiclist-infos img {
+  margin-right: 3px;
+}
+
+.topicslist-stats {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    font-size: var(--small-size);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    background-color: var(--neutralDarker);
+    height: 100%;
+}
+
+.topicslist-avatar-lastpost.lastpostavatar {
+    padding: 10px;
+}
+
+.topicslist-avatar-lastpost img {
+    object-fit: cover;
+    object-position: center;
+    width: 50px;
+    height: 50px;
+    background: var(--neutralDark);
+    border-radius: 50%;
+}
+
+.topicslist-lastpost {
+width: 180px;
+    font-size: var(--inter-size);
+    text-align: center;
+}
+
+.topicslist-description {
+  border-top: 1px solid var(--neutralDark);
+  padding-top: 5px;
+  width: 100%;
+}
+
+.topic_pagination-desc {
+    display: grid
+;
     color: var(--contrast);
 }
 
-/* séparateur signature */
-.sepa_sign {
-  margin: 50px auto 0;
-  width: 400px;
+/* ligne qui séparent les annonces et les notes des autres sujets (à activer dans "message > configuration") */
+.topic_separator {
+  height: 5px;
+  background: var(--neutral);
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Bouton "trier les sujets" */
+#sort-topics {
+  position: relative;
+  display: inline;
+  background: var(--neutralDark);
+  margin: 10px 0;
+}
+
+.sort-form {
+  width: max-content;
+  background: var(--neutral);
+  border: 1px solid var(--neutralDarker);
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  display: none;
+}
+
+.expanded ~ .sort-form {
+  display: block;
+}
+
+/****** ------------------------------------------------------------------------------
+ ****** AFFICHAGE D'UN SUJET --------------------------------------------------------- ******/
+
+/* PARTICIPANTS DU SUJET ---*/
+
+/* Conteneur de la liste des participants au sujet */
+.poster-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+/* Avatar du participant*/
+.poster {
+  background: var(--poster-avatar);
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  margin-left: -8px;
+  border: 2px solid var(--neutralDark);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Lien de renvoi vers son profil */
+.poster a {
+  display: block;
+  height: 100%;
+}
+
+/* Nombre de participants */
+.poster-count {
+  margin-left: 8px;
+}
+
+.poster-more-list {
+  display: none;
+}
+
+.poster-more {
+  display: grid;
+  place-items: center;
   position: relative;
 }
-.sepa_sign .mask {
-  overflow: hidden;
-  height: 20px;
-}
-.sepa_sign .mask:after {
-  content: '';
+
+.poster-more:hover .poster-more-list {
   display: block;
-  margin: -25px auto 0;
-  width: 100%;
-  height: 25px;
-  border-radius: 125px / 12px;
-  box-shadow: 0 0 8px var(--white);
-}
-.sepa_sign span {
-  width: 35px;
-  height: 35px;
   position: absolute;
-  bottom: 100%;
-  margin-bottom: -18px;
-  left: 50%;
-  margin-left: -25px;
-  border-radius: 100%;
-  box-shadow: 0 2px 4px var(--white);
+  top: 29px;
+  width: 150px;
+  background: var(--neutralDarker);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/*** ------------------------------- ***/
+/*** SUJET ------------------------- ***/
+
+.post_row {
+  background: var(--neutral);
+  display: grid;
+  grid-template-rows: max-content auto;
+  grid-template-columns: min-content 1fr;
+  border-bottom: 1px solid var(--neutralDark);
+}
+
+div.post_row:nth-of-type(2) {
+  border-radius: 5px 5px 0 0;
+}
+
+div.post_row:last-of-type {
+  border-radius: 0 0 5px 5px;
+  border-bottom: none;
+}
+
+.post_date {
+  flex-grow: 100;
+}
+
+/* BOUTONS D'EDITION DU MESSAGE --- */
+/* Conteneur boutons d'édition */
+ul.profile-icons {
+    flex-grow: 1;
+    display: flex;
+    text-transform: uppercase;
+    font-size: var(--small-size);
+}
+
+/*UN SEUL bouton d'édition */
+ul.profile-icons li {
+  padding: 2px 4px;
+  border-radius: 5px;
+}
+/* Cache les boutons pour les invités */
+.profile-icons a[href=""] { display:none }
+
+/*hover d'un bouton d'édition*/
+ul.profile-icons li:hover {
   background: var(--co-gradient);
 }
-.sepa_sign span i {
-  position: absolute;
-  top: 4px;
-  bottom: 4px;
-  left: 4px;
-  right: 4px;
-  border-radius: 100%;
-  border: 1px solid var(--co-2);
-  outline: 1px solid var(--co-1);
-  text-align: center;
-  line-height: 235%;
-  font-size: var(--small-size);
-  text-shadow: 0px 0px 5px var(--co-2);
-  color: var(--contrast);
+
+/* BOUTON LIKE --- */
+/* Conteneur du bouton like */
+.like_button {
+  float: right;
+  margin-left: 10px;
+  flex-grow: 1;
+  cursor: pointer;
 }
+
+/* Bouton like */
+.rep-button,
+.rep-button:active,
+.rep-button:focus {
+  color: var(--textColor);
+  border: none;
+  padding: 3px 5px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/*Bouton au survol*/
+.rep-button:hover {
+  background: var(--var(--contrastLighter));
+}
+
+/* Texte "j'aime" */
+button.rep-button .like_text {
+}
+
+/*compteur de like*/
+button.rep-button .rep-nb {
+  margin-left: 5px;
+  padding: 0 3px;
+  background: var(--neutral);
+  border-radius: 3px;
+}
+
+.post_profile {
+  padding: 10px;
+  border-right: 1px solid var(--neutralDark);
+}
+
+.post_pseudo {
+ font-weight: 400;
+    font-family: var(--special-font);
+    font-size: var(--title-size);
+    text-transform: uppercase;
+    line-height: 100%;
+}
+
+/* Lien "@" de mention */
+a.fa-mention {
+  cursor: pointer;
+}
+
+/* Mention "en ligne" */
+.presence {display: none}
+
+.presence.online {
+  display: inline-block;
+  position: relative;
+  background-color: var(--neutralDarker);
+  border-radius: 5px;
+  padding: 0 5px;
+  margin: 0 auto;
+}
+
+/* RECOMPENSES --- */
+/* Conteneur des récompenses */
+#list_awards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* Récompense */
+.award {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  background-image: var(--award-image);
+  background-size: cover;
+  background-position: center;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.award:hover .award_tooltiptext {
+  display: block;
+}
+
+/* Bloc description de la récompenses */
+.award_tooltiptext {
+  width: max-content;
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 25px;
+  background-color: var(--neutral);
+  border: 1px solid var(--neutralDark);
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 11px;
+}
+
+/* titre de la récompenses*/
+.award_tooltiptext_title {
+  font-weight: 600;
+}
+
+.online:empty {
+  display: none;
+}
+
+.post_message {
+  padding: 25px;
+  text-align: justify;
+}
+
+/* REPONSE RAPIDE --- */
+/*supression de la mention "réponse rapide" */
+.quickreply div.h3 {
+  display: none;
+}
+
+/*centrer la réponse rapide*/
+.quickreply {
+  justify-content: center;
+}
+
+/* Retire le cadre de la réponse rapide pour les invités */
+#quickreply_content:empty {
+  display: none;
+}
+
+/*** ------------------------------- ***/
+/*** SONDAGE ----------------------- ***/
+
+.poll {
+  background: var(--neutral);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.head_poll {
+  padding: 10px;
+  border-bottom: 1px solid var(--neutralDark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.poll_list {
+  display: grid;
+  grid-template-columns: 220px auto;
+}
+
+.poll_option {
+  padding: 10px 20px 0 10px;
+  border-right: 1px solid var(--neutralDark);
+  text-align: right;
+}
+
+.poll_vote {
+  padding: 10px 10px 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.poll_send {
+  margin-left: 220px;
+  padding: 20px 10px 20px 20px;
+  border-left: 1px solid var(--neutralDark);
+}
+
+.poll_vote:nth-child(2),
+.poll_option:first-child {
+  padding-top: 20px;
+}
+
+.votes-users-list {
+  justify-content: start;
+  margin: 20px 0 0;
+}
+
+/*** ------------------------------- ***/
+/*** TEXTES, BALISES, ETC ---------- ***/
+
+/* Lien-tag des utilisateurs */
+.mentiontag {
+}
+
+/* BALISES DE MESSAGE : spoiler, code, quote... */
+
+/* Balise code, spoiler et hide*/
+.codebox {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Contenu code, spoiler et hide*/
+.codebox dd {
+  background: var(--neutralDark);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* Nom de balise "code, spoiler" */
+.codebox dt {
+  font-weight: 700;
+  font-size: var(--little-size);
+}
+
+/*retire la mention "code" du bloc*/
+#codeBox dt {
+  height: 0;
+  font-size: 0;
+}
+
+/* bouton "copier" */
+.copyCode {
+  font-size: 12px;
+  font-weight: normal;
+  position: absolute;
+  top: 5px;
+  right: 13px;
+  font-family: monospace;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+div.cont_code {
+  clear: right;
+}
+
+/* Spoiler */
+.hidebox.spoiler {
+}
+
+/* spoiler fermé */
+.spoiler_content {
+  display: none;
+}
+
+/* spoiler ouvert */
+.spoiler_content.hidden {
+  display: block;
+}
+
+/* Citation contenu */
+blockquote div {
+  padding-left: 20px;
+}
+
+/* Citation mention "... a écrit" */
+blockquote cite {
+  display: block;
+  margin-left: -20px;
+  font-style: normal;
+}
+
+/* Citation pseudo */
+blockquote cite a {
+  text-decoration: none !important;
+}
+
+/* Hide */
+.codebox.hidecode dd {
+  background: transparent;
+  opacity: 0.8;
+}
+
 
 /****** ------------------------------------------------------------------------------
 ****** AFFICHAGE D'UN SUJET --------------------------------------------------------- ******/
