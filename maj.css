@@ -128,7 +128,7 @@ span.italic {
   
   /* userInfos */
   
-  #field_id1, #field_id-4, #field_id10 {
+  #field_id1, #field_id-4, #field_id-6 {
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(2, auto);
     justify-content: center;
@@ -136,7 +136,7 @@ span.italic {
     gap: 0 var(--spacing);
   }
   
-  #field_id1::before, #field_id-4::before, #field_id10::before {
+  #field_id1::before, #field_id-4::before, #field_id-6::before {
     content: '\e979';
     grid-row: 1 / span 2;
     font-family: var(--font-ic);
@@ -145,9 +145,9 @@ span.italic {
   
   #field_id1::before { content: '\e99c' }
   #field_id-4::before { content: '\e9db' }
-  #field_id10::before { content: '\ecfe' }
+  #field_id-6::before { content: '\ecfe' }
   
-  #field_id1::after, #field_id-4::after, #field_id10::after {
+  #field_id1::after, #field_id-4::after, #field_id-6::after {
     content: "";
     grid-column: 1 / span 2;
     width: 100%;
