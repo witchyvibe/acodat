@@ -2518,45 +2518,71 @@ a.fa-mention {
 
 /* Balise code, spoiler et hide*/
 .codebox {
-  display: block;
-  width: 90%;
-  margin: 0 auto;
-  position: relative;
+display: block;
+width: 90%;
+max-width: 50vw;
+margin: 0 auto;
+position: relative;
 }
 
 /* Contenu code, spoiler et hide*/
-.codebox dd {
-  background: var(--neutralDark);
-  border-radius: 5px;
-  padding: 5px;
+.codebox dd:not(.hidecode dd) {
+background: var(--neutralDark);
+border-radius: 5px;
+padding: 5px;
+overflow: hidden auto;
+max-height: 250px;
 }
 
 /* Nom de balise "code, spoiler" */
 .codebox dt {
-  font-weight: 700;
-  font-size: var(--little-size);
-}
-
-/*retire la mention "code" du bloc*/
-#codeBox dt {
-  height: 0;
-  font-size: 0;
+font-size: var(--little-size);
+font-weight: 700;
+letter-spacing: 1px;
+color: var(--co-2);
+transition: all .5s;
+text-transform: uppercase;
 }
 
 /* bouton "copier" */
 .copyCode {
-  font-size: 12px;
-  font-weight: normal;
-  position: absolute;
-  top: 5px;
-  right: 13px;
-  font-family: monospace;
-  text-transform: uppercase;
-  cursor: pointer;
+position: absolute;
+top: 0;
+right: 25px;
+}
+
+code:not(.codebox code), .code {
+background: var(--neutralDarker);
+padding: 1px 2px;
+border: 1px solid var(--base-3);
+border-radius: var(--xs-radius);
+color: var(--co-2);
+text-shadow: 0 0 3px;
+}
+
+code span::before {font-size:var(--small-size);margin:0}
+
+dl.codebox {background-color: var(--neutralDarker);border-left: 4px solid var(--co-2);border-radius: var(--radius);padding: 10px;}
+dl.codebox dt {border-bottom: 1px solid var(--co-2);position: inherit;}
+dl.codebox::before { color: var(--base-5) }
+dl.codebox code { color: var(--textColor); font-family: var(--font); font-size: var(--little-size); line-height: var(--little-size); text-shadow: none; border: none; }
+dl.codebox::before {
+color: var(--base-5);
+}
+dl.codebox:not(.hidecode)::before {
+content: "\ea11";
+position: absolute;
+right: 10px;
+top: 8px;
+display: inline-block;
+font-family: var(--font-ic);
+color: var(--co-1);
+speak: none;
+font-style: normal;
 }
 
 div.cont_code {
-  clear: right;
+clear: right;
 }
 
 /* Spoiler */
@@ -2565,35 +2591,12 @@ div.cont_code {
 
 /* spoiler fermé */
 .spoiler_content {
-  display: none;
+display: none;
 }
 
 /* spoiler ouvert */
 .spoiler_content.hidden {
-  display: block;
-}
-
-/* Citation contenu */
-blockquote div {
-  padding-left: 20px;
-}
-
-/* Citation mention "... a écrit" */
-blockquote cite {
-  display: block;
-  margin-left: -20px;
-  font-style: normal;
-}
-
-/* Citation pseudo */
-blockquote cite a {
-  text-decoration: none !important;
-}
-
-/* Hide */
-.codebox.hidecode dd {
-  background: transparent;
-  opacity: 0.8;
+display: block;
 }
 
 
