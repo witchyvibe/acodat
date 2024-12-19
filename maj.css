@@ -163,23 +163,10 @@ span.italic {
 #field_id5 label {
     display: none;
   }
-  #field_id4 label span, #field_id3 label span, #field_id5 field,
-  #field_id4 field::after, #field_id3 field::after {
+  #field_id4 field, #field_id3 field, #field_id5 field {
     font-family: var(--font-2);
     font-style: italic;
   }
-
-#field_id4 field::after { content: "messages" }
-#field_id3 field::after { content: "gallions" }
-  
-  #field_id4 .field_uneditable, #field_id3 .field_uneditable {
-    font-weight: 600;
-    color: var(--co-2);
-	  line-height: 170%;
-  }
-  
-   #field_id3 label, #field_id4 label, #field_id36 label, #field_id5 label, #field_id2 label,
-   #field_id3 field, #field_id4 field, #field_id36 field, #field_id37 field, #field_id5 field, #field_id2 field {display: inline-block}
   
 .user_contacts #field_id:nth-of-type(2),
 #field_id37 label {
