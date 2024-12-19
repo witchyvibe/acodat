@@ -90,34 +90,22 @@ span.italic {
     border-radius: 50%;
   }
   
-  #field_id9 {
+  #field_id2 {
     grid-column: 1;
     overflow: auto;
     height: 360px;
     border: 12px solid var(--white);
   }
 
-#field_id9 textarea {
+#field_id2 textarea {
     height: 313px;
     width: 100%;
 }
   
-  #field_id9 label,
+  #field_id2 label,
   #field_id40 label {
     display: none;
   }
-
-#field_id48 li::before {
-    content: "";
-    display: inline-block;
-    margin: 0 9px 1px 0;
-    outline: 1px solid var(--co-1);
-    outline-offset: 2px;
-    width: 4px;
-    height: 4px;
-    background: var(--co-1);
-    border-radius: 50%;
-}
   
   #userGame > *:not(.profile_data, #user_avatar),
   #userInfos {
