@@ -1,3 +1,300 @@
+/****** ------------------------------------------------------------------------------
+****** AFFICHAGE D'UN SUJET --------------------------------------------------------- ******/
+
+/* PARTICIPANTS DU SUJET ---*/
+
+/* Conteneur de la liste des participants au sujet */
+.poster-list {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: -10px;
+margin-bottom: var(--spacing);
+}
+
+/* Avatar du participant*/
+.poster {
+background: var(--poster-avatar);
+height: 30px;
+width: 30px;
+border-radius: 100%;
+margin-left: -8px;
+border: 2px solid var(--neutralDark);
+background-size: cover;
+background-position: center;
+}
+
+/* Lien de renvoi vers son profil */
+.poster a {
+display: block;
+height: 100%;
+}
+
+/* Nombre de participants */
+.poster-count {
+margin-left: 8px;
+}
+
+.poster-more-list {
+display: none;
+}
+
+.poster-more-list {
+z-index: 999;
+position: relative;
+padding: 0 20px;
+background: var(--white);
+font-size: var(--little-size);
+}
+
+.poster-more {
+display: grid;
+place-items: center;
+position: relative;
+}
+
+.poster-more:hover .poster-more-list {
+display: block;
+position: absolute;
+top: 29px;
+width: 150px;
+background: var(--neutralDarker);
+padding: 10px;
+border-radius: 5px;
+}
+.poster.poster-more span { font-size: var(--small-size); color: var(--white); }
+
+/*** ------------------------------- ***/
+/*** SUJET ------------------------- ***/
+
+.post_row {
+position: relative;
+display: grid;
+grid-template-columns: 240px 1fr;
+background: var(--neutral);
+border-radius: var(--radius);
+margin-bottom: var(--spacing);
+padding-bottom: var(--spacing);
+backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+}
+
+.post_avatar {
+    grid-row: 1;
+    grid-column: 1;
+    position: sticky;
+    top: 10px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    justify-items: center;
+    margin-left: 8px;
+    width: 225px;
+    height: 430px;
+    margin-top: var(--spacing);
+}
+
+.post_avatar a {
+  border: none;
+  grid-row: 2;
+  grid-column: 1;
+  align-self: center;
+}
+
+.post_avatar img {
+    width: 200px;
+    border-radius: var(--radius);
+    background: var(--neutralDarker);
+    padding: 1px;
+}
+
+/*contour avatar event*/
+.post_avatar.yule::before { grid-row: 2; grid-column: 1; position: relative; content: ""; display: block; width: 225px; height: 362px; background: url(https://www.aht.li/3886015/cadre-yule.png) no-repeat; background-size: 100% auto; margin: 18px -4px 0 0; }
+.post_avatar.yule::after { grid-row: 2; grid-column: 1; justify-self: start; align-self: start; margin: 1px 0 0 -25px; content: ""; background: url(https://www.aht.li/3886020/cadre-yule1.gif) no-repeat; display: block; width: 95px; height: 95px; background-size: 100% auto; }
+
+.profil_contact { width: 200px; padding: 5px 0 3px; background: var(--neutralDark); border-radius: var(--radius); text-align: center; }
+.profil_contact img {width: 20px; opacity: 0}
+
+.profil_contact span {margin: 0 7px}
+
+.post_profile {
+grid-row: 1;
+grid-column: 1 / span 2;
+display: grid;
+grid-template-columns: 240px 1fr;
+padding-bottom: var(--spacing);
+height: 100%;
+}
+
+.post_profile::before {
+content: "";
+grid-row: 1;
+grid-column: 1 / span 2;
+display: block;
+width: 100%;
+height: 160px;
+background: var(--neutralDark);
+border-radius: var(--radius) var(--radius) 0 0;
+border-bottom: 1px solid var(--neutral);
+}
+
+.post_infos {
+grid-row: 1;
+grid-column: 2;
+height: 100px;
+margin: var(--spacing) var(--spacing) 0 0;
+position: relative;
+}
+
+.post_pseudo {
+font-weight: 400;
+font-family: var(--special-font);
+font-size: var(--title-size);
+text-transform: uppercase;
+    line-height: 100%;
+}
+
+.post_message {
+grid-row: 1;
+grid-column: 2;
+margin: 160px 0 10px 0;
+border-radius: var(--radius);
+}
+
+.post_message > div:not(.post_details) {
+padding-right: var(--spacing);
+}
+
+.post_details {
+width: fit-content;
+padding: 5px;
+display: flex;
+align-items: center;
+gap: 10px;
+margin: 0 0 10px auto;
+border-radius: var(--radius);
+}
+
+.post_date {
+display: flex;
+gap: 5px;
+align-items: center;
+}
+
+.post_date > a {
+font-size: var(--little-size);
+}
+
+.signature_div { text-align: center; margin-top: -10px; padding: 0 var(--spacing) var(--spacing) 0 }
+
+/* BOUTONS D'EDITION DU MESSAGE --- */
+/* Conteneur boutons d'édition */
+.profile-icons {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+/*UN SEUL bouton d'édition */
+
+.profile-icons span {
+background: var(--co-gradient);
+display: flex;
+justify-content: center;
+align-items: center;
+width: 18px;
+height: 18px;
+border-radius: 50%;
+font-size: 9px;
+color: white;
+transition: all .5s;
+}
+
+/* BOUTON COMPTE RP */
+.fa_reputation { display: flex; position: absolute; bottom: -59px; left: -20px; }
+.fa_reputation>a {border: none !important}
+.fa_reputation:has(.fa_positive:not(.fa_positive[title="+0 rp"])) .fa_vote.fa_plus,
+.fa_reputation:has(.fa_positive:not(.fa_positive[title="+0 rp"])) .fa_voted { display: none; }
+.rp_button,
+.fa_positive:not(.fa_positive[title="+0 rp"])::before { display: block; width: 70px; height: 18px; text-align: center; padding: 0 5px; border-radius: 0 0 var(--xs-radius) 0; font-size: var(--little-size); color: var(--textColor)}
+.rp_button {background: var(--base-1); letter-spacing: 1px}
+.fa_positive[title="+1 rp"]::before { content: "rp compté"; display: block; background: var(--co-2grad); color: white !important}
+.fa_positive:not(.fa_positive[title="+0 rp"], .fa_positive[title="+1 rp"])::before { content: "+ d'une fois !"; display: block; background: var(--co-gradient); color: white}
+.fa_count { font-size: 0; }
+
+/* BOUTON LIKE --- */
+/* Conteneur du bouton like */
+.fa_like_list:not(:empty), .fa_dislike_list:not(:empty) { background: var(--neutral); margin: 20px 100px -10px 0; padding: 6px 10px; border-radius: var(--radius); font-size: var(--little-size); text-transform: lowercase; }
+.fa_like_div {grid-column: 2}
+.fa_like_div p {margin: 0}
+.fa_like_tooltip {display: none; position: absolute; background: var(--co-gradient); border-radius: var(--xs-radius); z-index: 2}
+.fa_like_others { position: relative; background: none; color: var(--contrast); font-weight: 600; border-bottom: 1px dotted; }
+.fa_like_others:hover .fa_like_tooltip {display: inline-block}
+.fa_like_tooltip a {white-space: nowrap}
+
+
+.like_button {
+position: absolute;
+right: 5px;
+bottom: 5px;
+cursor: pointer;
+display: flex;
+gap: 5px;
+}
+
+.like_button button img {
+width: 30px;
+height: 30px;
+}
+
+/* Bouton like */
+.rep-button,
+.rep-button:active,
+.rep-button:focus {
+display: flex;
+min-width: 36px;
+background: transparent;
+color: var(--textColor);
+border: none;
+padding: 0;
+border-radius: 5px;
+font-weight: 600;
+}
+
+/*Bouton au survol*/
+.rep-button:hover {
+background: var(--var(--contrastLighter));
+}
+
+/* Texte "j'aime" */
+button.rep-button .like_text {
+}
+
+/*compteur de like*/
+button.rep-button .rep-nb {
+padding: 0 3px;
+background: var(--neutral);
+border-radius: 3px;
+}
+
+/* Lien "@" de mention */
+a.fa-mention {
+}
+
+/* Mention "en ligne" */
+.online {
+font-size: 0;
+font-style: italic;
+}
+
+.online::before {
+content: "est en ligne";
+font-size: var(--little-size);
+line-height: 180%;
+}
+
+.online:empty {
+display: none;
+}
+
 /*** ------------------------------- ***/
 /*** ÉDITEUR DE TEXTE ------------ ***/
 
